@@ -1,0 +1,1 @@
+## The simple vue configuration
