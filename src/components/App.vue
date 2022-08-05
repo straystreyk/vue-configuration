@@ -1,5 +1,8 @@
 <template>
-  <button @click="plusCount">{{ count }}</button>
+  <div>
+    Hello vue
+    <button @click="plusCount">{{ plusFormatter }}</button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -17,17 +20,14 @@ export default defineComponent({
       this.count += 1;
     },
   },
+  computed: {
+    plusFormatter() {
+      return this.count;
+    },
+  },
 });
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  body {
-    color: red;
-  }
-}
+@import "./index";
 </style>

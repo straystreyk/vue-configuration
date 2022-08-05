@@ -84,13 +84,14 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
-          "style-loader",
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              esModule: false,
-            },
-          },
+          isProd
+            ? {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  esModule: false,
+                },
+              }
+            : "style-loader",
           "css-loader",
           "sass-loader",
         ],
@@ -115,6 +116,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
+      "@": path.resolve(__dirname, "src"),
       vue: "@vue/runtime-dom",
     },
     extensions: ["*", ".js", ".json", ".ts", ".vue"],
