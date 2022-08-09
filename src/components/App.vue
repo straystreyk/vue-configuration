@@ -2,6 +2,7 @@
   <div>
     Hello vue
     <button @click="plusCount">{{ plusFormatter }}</button>
+    <router-view />
   </div>
 </template>
 
